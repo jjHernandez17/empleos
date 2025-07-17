@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "893e",
+      "name": "juan jose ",
+      "correo": "juanjo@gmail.com",
+      "password": "123",
+      "typePerson": "persona"
+    },
+    {
+      "id": "c89c",
+      "name": "ricardo",
+      "correo": "ricardo@gmail.com",
+      "password": "123",
+      "typePerson": "empresa"
+    },
+    {
+      "id": "12f7",
+      "name": "mamaguevo company",
+      "correo": "robinson@gmail.com",
+      "password": "123",
+      "typePerson": "empresa"
+    }
+  ]
+}

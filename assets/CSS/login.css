@@ -1,0 +1,21 @@
+body {
+      background-color: #f5f0fa;
+      color: #4b0082;
+    }
+    .btn-purple {
+      background-color: #6a0dad;
+      color: white;
+    }
+    .btn-purple:hover {
+      background-color: #5a0099;
+      
+    }
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .form-control:focus {
+      border-color: #6a0dad;
+      box-shadow: 0 0 0 0.2rem rgba(106, 13, 173, 0.25);
+    }
