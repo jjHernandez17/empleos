@@ -28,11 +28,11 @@
       "password": "123",
       "typePerson": "empresa",
       "profileCompany": {
-        "nameCompanyProfile": "camilo",
-        "sectorCompanyProfile": "",
-        "industryCompanyProfile": "",
-        "descriptionCompanyProfile": "",
-        "addressCompanyProfile": ""
+        "nameCompanyProfile": "jobbridge",
+        "sectorCompanyProfile": "busqueda de empleo",
+        "industryCompanyProfile": "servicio web",
+        "descriptionCompanyProfile": "En nuestra plataforma, conectamos empresas que buscan talento con personas en busca de nuevas oportunidades\nlaborales. Ya seas una empresa en crecimiento o un profesional en busca de empleo, aquí encontrarás un\nespacio seguro y eficiente para satisfacer tus necesidades.",
+        "addressCompanyProfile": "cll 83 #58-19 "
       }
     }
   ]

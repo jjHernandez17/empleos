@@ -1,3 +1,14 @@
+document - addEventListener('DOMContentLoaded', renderInfoProfileCompany)
+
+function renderInfoProfileCompany() {
+  userLog = JSON.parse(localStorage.getItem("userLog"))
+  document.getElementById("nameCompany").innerText = userLog.profileCompany.nameCompanyProfile
+  document.getElementById("sectorCompany").innerText = userLog.profileCompany.sectorCompanyProfile
+  document.getElementById("industryCompany").innerText = userLog.profileCompany.industryCompanyProfile
+  document.getElementById("descriptionCompany").innerText = userLog.profileCompany.descriptionCompanyProfile
+  document.getElementById("addressCompany").innerText = userLog.profileCompany.addressCompanyProfile
+}
+
 function setupEditButton() {
   const btnEditProfile = document.getElementById("btnEditProfile");
   const nameCompany = document.getElementById("nameCompany");
@@ -39,7 +50,7 @@ function setupEditButton() {
       btnEditProfile.classList.replace("btn-success", "btn-outline-primary");
 
       const userLog = JSON.parse(localStorage.getItem("userLog"))
-      
+
       fetch(`http://localhost:3000/users/${userLog.id}`, {
         method: "PATCH",
         headers: {
@@ -47,13 +58,13 @@ function setupEditButton() {
         },
         body: JSON.stringify({
           profileCompany: {
-          nameCompanyProfile: nameCompany.innerText,
-          sectorCompanyProfile: sectorCompany.innerText,
-          industryCompanyProfile: industryCompany.innerText,
-          descriptionCompanyProfile: descriptionCompany.innerText,
-          addressCompanyProfile: addressCompany.innerText
+            nameCompanyProfile: nameCompany.innerText,
+            sectorCompanyProfile: sectorCompany.innerText,
+            industryCompanyProfile: industryCompany.innerText,
+            descriptionCompanyProfile: descriptionCompany.innerText,
+            addressCompanyProfile: addressCompany.innerText
           }
-          
+
         })
       });
 
@@ -66,13 +77,10 @@ function setupEditButton() {
 
       }
 
-      nameCompany.innerText = nameCompany.innerText
       localStorage.setItem("userLog", JSON.stringify(userLog))
-      
+
     }
 
-    userLog = JSON.parse(localStorage.getItem("userLog"))
-      
-    nameCompany.innerText = userLog.profileCompany.nameCompany
+
   });
 }
