@@ -23,7 +23,7 @@ function registerUser() {
             name: infullName,
             correo: inemail,
             password: inpassword,
-            typePerson: user
+            typePerson: user,
             
         })
     })
@@ -37,6 +37,10 @@ function registerUser() {
         alert("Usuario registrado con exito")
     event.preventDefault();
 }
+
+
+
+
 
 
 btnRegister.addEventListener('click',registerUser);

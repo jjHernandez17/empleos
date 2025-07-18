@@ -31,3 +31,7 @@
       border: 2px dashed #5E0A6C;
       background-color: #f7ebfa;
     }
+
+    .min-h {
+      min-height: 35px;
+    }

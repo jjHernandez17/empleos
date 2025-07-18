@@ -20,6 +20,20 @@
       "correo": "robinson@gmail.com",
       "password": "123",
       "typePerson": "empresa"
+    },
+    {
+      "id": "06d3",
+      "name": "cambios envigado",
+      "correo": "cambios@gmail.com",
+      "password": "123",
+      "typePerson": "empresa",
+      "profileCompany": {
+        "nameCompanyProfile": "camilo",
+        "sectorCompanyProfile": "",
+        "industryCompanyProfile": "",
+        "descriptionCompanyProfile": "",
+        "addressCompanyProfile": ""
+      }
     }
   ]
 }

@@ -1,42 +1,78 @@
-btnEditProfile = document.getElementById("btnEditProfile");
-nameComapany = document.getElementById("nameComapany");
-sectorCompany = document.getElementById("sectorCompany");
-industryCompany = document.getElementById("industryCompany");
-descriptionCompany = document.getElementById("descriptionCompany");
-adressCompany = document.getElementById("adressCompany");
+function setupEditButton() {
+  const btnEditProfile = document.getElementById("btnEditProfile");
+  const nameCompany = document.getElementById("nameCompany");
+  const sectorCompany = document.getElementById("sectorCompany");
+  const industryCompany = document.getElementById("industryCompany");
+  const descriptionCompany = document.getElementById("descriptionCompany");
+  const addressCompany = document.getElementById("addressCompany");
 
-function editProfileCompany() {
-    const editable = nameComapany.getAttribute("contenteditable") === "true";
-    const editable2 = sectorCompany.getAttribute("contenteditable") === "true";
-    const editable3 = industryCompany.getAttribute("contenteditable") === "true";
-    const editable4 = descriptionCompany.getAttribute("contenteditable") === "true";
-    const editable5 = adressComapany.getAttribute("contenteditable") === "true";
+  btnEditProfile.addEventListener("click", () => {
+    const isEditable = nameCompany.getAttribute("contenteditable") === "true";
 
-      if (!editable && !editable2 && !editable3 && !editable4 && !editable5) {
-        nameComapany.setAttribute("contenteditable", "true");
-        sectorCompany.setAttribute("contenteditable", "true");
-        industryCompany.classList.add("editable");
-        descriptionCompany.setAttribute("contenteditable", "true");
-        adressComapany.setAttribute("contenteditable", "true");
-        btnEditProfile.textContent = "Guardar";
-        btnEditProfile.classList.replace("btn-outline-primary", "btn-success");
-      } else {
-        nameComapany.setAttribute("contenteditable", "false");
-        sectorCompany.setAttribute("contenteditable", "false");
-        industryCompany.setAttribute("contenteditable", "false");
-        descriptionCompany.setAttribute("contenteditable", "false");
-        adressComapany.setAttribute("contenteditable", "false");
+    if (!isEditable) {
+      nameCompany.setAttribute("contenteditable", "true");
+      sectorCompany.setAttribute("contenteditable", "true");
+      industryCompany.setAttribute("contenteditable", "true");
+      descriptionCompany.setAttribute("contenteditable", "true");
+      addressCompany.setAttribute("contenteditable", "true");
 
-        nameComapany.classList.remove("editable");
+      [nameCompany, sectorCompany, industryCompany, descriptionCompany, addressCompany].forEach(el => {
+        el.classList.add("editable");
+      });
 
-        btnEditProfile.textContent = "Editar";
-        btnEditProfile.classList.replace("btn-success", "btn-outline-primary");
+      btnEditProfile.textContent = "Guardar";
+      btnEditProfile.classList.replace("btn-outline-primary", "btn-success");
 
-        // Aquí podrías guardar los cambios en localStorage o base de datos
-        const nuevoTexto = descripcion.innerText;
-        console.log("Descripción guardada:", nuevoTexto);
+    } else {
+
+      nameCompany.setAttribute("contenteditable", "false");
+      sectorCompany.setAttribute("contenteditable", "false");
+      industryCompany.setAttribute("contenteditable", "false");
+      descriptionCompany.setAttribute("contenteditable", "false");
+      addressCompany.setAttribute("contenteditable", "false");
+
+      [nameCompany, sectorCompany, industryCompany, descriptionCompany, addressCompany].forEach(el => {
+        el.classList.remove("editable");
+      });
+
+      btnEditProfile.textContent = "Editar";
+      btnEditProfile.classList.replace("btn-success", "btn-outline-primary");
+
+      const userLog = JSON.parse(localStorage.getItem("userLog"))
+      
+      fetch(`http://localhost:3000/users/${userLog.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          profileCompany: {
+          nameCompanyProfile: nameCompany.innerText,
+          sectorCompanyProfile: sectorCompany.innerText,
+          industryCompanyProfile: industryCompany.innerText,
+          descriptionCompanyProfile: descriptionCompany.innerText,
+          addressCompanyProfile: addressCompany.innerText
+          }
+          
+        })
+      });
+
+      userLog.profileCompany = {
+        nameCompanyProfile: nameCompany.innerText,
+        sectorCompanyProfile: sectorCompany.innerText,
+        industryCompanyProfile: industryCompany.innerText,
+        descriptionCompanyProfile: descriptionCompany.innerText,
+        addressCompanyProfile: addressCompany.innerText
+
       }
-    };
 
-btnEditProfile
+      nameCompany.innerText = nameCompany.innerText
+      localStorage.setItem("userLog", JSON.stringify(userLog))
+      
+    }
 
+    userLog = JSON.parse(localStorage.getItem("userLog"))
+      
+    nameCompany.innerText = userLog.profileCompany.nameCompany
+  });
+}

@@ -4,54 +4,30 @@ export function renderProfileCompany() {
     <div class="p-5 card card-profile">
       <div class="text-center mb-4">
         <img src="assets/IMAGES/logo.png" class="logo-profile " alt="Logo Empresa">
-        <h2 contenteditable="false" id="nameComapany" class="text-title">Nombre de la Empresa</h2>
+        <h2 contenteditable="false" id="nameCompany" class=" card text-title">Nombre de la Empresa</h2>
       </div>
 
       <div class="row text-center mb-4">
         <div class="col-md-6">
           <strong class="section-title mb-1">Sector</strong>
-          <p contenteditable="false" class="section-content" id="sectorCompany">Tecnología</p>
+          <p contenteditable="false" class="min-h card section-content" id="sectorCompany"></p>
         </div>
         <div class="col-md-6">
           <strong class="section-title mb-1">Industria</strong>
-          <p contenteditable="false" class="section-content" id="industryCompany">Software</p>
+          <p contenteditable="false" class="min-h card section-content" id="industryCompany"></p>
         </div>
       </div>
 
       <div class="mb-3">
         <strong class="section-title mb-1">Descripción</strong>
-        <p contenteditable="false" class="section-content " id="descriptionCompany">
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
-          Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.Somos una empresa enfocada en desarrollar soluciones digitales para conectar talento con oportunidades laborales.
+        <p contenteditable="false" class="section-content card p-3 " id="descriptionCompany">
+          
         </p>
       </div>
 
       <div>
         <strong class="section-title mb-1">Dirección</strong>
-        <p class="section-content" id="adressCompany">Calle 123 #45-67, Bogotá, Colombia</p>
+        <p class="min-h card section-content" id="addressCompany"></p>
       </div>
     </div>
   </div>
@@ -60,4 +36,6 @@ export function renderProfileCompany() {
     </div>
 
 `
+  setupEditButton();
+
 }
